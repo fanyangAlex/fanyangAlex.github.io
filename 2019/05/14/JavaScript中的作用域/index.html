@@ -128,8 +128,7 @@
 <h2 id="函数作用域"><a href="#函数作用域" class="headerlink" title="函数作用域"></a>函数作用域</h2><p>变量在声明他的函数体以及这个函数体嵌套的任何函数体内都是有定义的。在函数内声明的所有变量都是始终可见的，这给 JavaScript 带了一个“声明提前”的特性，即 JavaScript 函数里声明的所有变量都被提前到函数体的顶部。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var scope=&apos;global&apos;;</span><br><span class="line">function f()&#123;</span><br><span class="line">    console.log(scope);</span><br><span class="line">    var scope=&apos;local&apos;;</span><br><span class="line">    console.log(scope);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这是典型的声明提前的例子，代码的输出将是两个’local’。</p>
-<h2 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h2><p>每段 JavaScript 代码都有一个与之相关联的作用域链，这个作用域链是一个对象列表或链表，这组对象定义了这段代码的作用域中的变量。<br>在最顶层代码中，作用域链包含一个全局对象，不嵌套的函数体内，作用域链包含全局对象和定义了函数参数和局部变量的对象，嵌套的函数体内，作用域链至少有三个对象。</p>
-<p>当一个函数创建后，它的作用域链会被创建此函数的作用域中可访问的数据对象填充。执行此函数时会创建一个称为“运行期上下文(execution context)”的内部对象，运行期上下文定义了函数执行时的环境。每个运行期上下文都有自己的作用域链，用于标识符解析，当运行期上下文被创建时，而它的作用域链初始化为当前运行函数的[[Scope]]所包含的对象。<br>这些值按照它们出现在函数中的顺序被复制到运行期上下文的作用域链中。它们共同组成了一个新的对象，叫“活动对象(activation object)”，该对象包含了函数的所有局部变量、命名参数、参数集合以及 this，然后此对象会被推入作用域链的前端，当运行期上下文被销毁，活动对象也随之销毁。</p>
+<h2 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h2><p>每段 JavaScript 代码都有一个与之相关联的作用域链，这个作用域链是一个对象列表或链表，这组对象定义了这段代码的作用域中的变量。<br>在最顶层代码中，作用域链包含一个全局对象，不嵌套的函数体内，作用域链包含全局对象和定义了函数参数和局部变量的对象，嵌套的函数体内，作用域链至少有三个对象。<br>当一个函数创建后，它的作用域链会被创建此函数的作用域中可访问的数据对象填充。执行此函数时会创建一个称为“运行期上下文(execution context)”的内部对象，运行期上下文定义了函数执行时的环境。每个运行期上下文都有自己的作用域链，用于标识符解析，当运行期上下文被创建时，而它的作用域链初始化为当前运行函数的[[Scope]]所包含的对象。这些值按照它们出现在函数中的顺序被复制到运行期上下文的作用域链中。它们共同组成了一个新的对象，叫“活动对象(activation object)”，该对象包含了函数的所有局部变量、命名参数、参数集合以及 this，然后此对象会被推入作用域链的前端，当运行期上下文被销毁，活动对象也随之销毁。</p>
 
       </div>
       
@@ -138,7 +137,12 @@
             <a href="/tags/javascript/">javascript</a>
             </div>
         
-        <nav class="post-nav"></nav></footer>
+        <nav class="post-nav"><a class="prev" href="/2019/05/14/Javascript中的变量对象/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">JavaScript中的变量对象</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    </nav></footer>
     </article></div><div class="comments" id="comments"></div></div>
       </main>
 
